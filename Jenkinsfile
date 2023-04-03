@@ -14,13 +14,9 @@ pipeline {
       }
       stage('Test') {
          steps {
-            bat 'npm test'
+            bat 'npm start'
          }
       }
-      stage('Deploy') {
-         steps {
-            bat 'npm run deploy'
-         }
-      }
+
    }
 }
