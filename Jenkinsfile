@@ -8,13 +8,14 @@ pipeline {
       }
       stage('Build') {
          steps {
-            bat 'npm install'
+            bat 'docker rm -f cicd '
+                'docker build -t jenkins'
             
          }
       }
       stage('Test') {
          steps {
-            bat 'npm start'
+            bat 'docker run -d -p 3000:3000 --name cicd jenkins'
          }
       }
 
