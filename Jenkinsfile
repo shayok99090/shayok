@@ -8,9 +8,8 @@ pipeline {
       }
       stage('Build') {
          steps {
-            bat 'docker rm -f cicd '
-                'docker build -t jenkins'
-            
+            bat 'docker rm -f cicd'
+            bat 'docker build -t jenkins .'
          }
       }
       stage('Test') {
@@ -18,6 +17,5 @@ pipeline {
             bat 'docker run -d -p 3000:3000 --name cicd jenkins'
          }
       }
-
    }
 }
