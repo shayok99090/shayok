@@ -13,7 +13,7 @@ pipeline {
       }
       stage('Test') {
          steps {
-            bat 'docker start cicds'
+            bat 'docker start cicd'
          }
       }
    }
