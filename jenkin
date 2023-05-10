@@ -17,14 +17,5 @@ pipeline {
          }
       }
    }
-  post { 
-        always { 
-            script {
-                    office365ConnectorSend webhookUrl: 'https://digigate360.webhook.office.com/webhookb2/bd5665f9-ff7e-4738-bff5-132469cb9a5b@a96d35dd-3b65-4784-9d1c-3e5c7b61a081/IncomingWebhook/97b64f35670746a5a8d0d09a772bf91e/34e295b1-5a39-4787-a86f-8a8e8ce73be5',
-                        status: "Environment Owners", 
-                        message: "Environment owners can be seen here (<${env.BUILD_URL}>)"
-    }
-   }
-  }
 
 }
