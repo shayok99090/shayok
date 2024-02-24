@@ -1,25 +1,18 @@
-name: Docker Build and Run
+name: Build and Run Docker Image
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Docker
-      uses: actions/setup-docker@v2
-      with:
-        dockerfile: Dockerfile  # Specify the path to your Dockerfile if it's not in the root directory
+      - name: Build Docker image
+        run: docker build shayok .
 
-    - name: Build Docker image
-      run: docker build -t shayok .
-
-    - name: Run Docker container
-      run: docker run -d -p 3000:3000 shayok
+      - name: Run Docker container
+        run: docker run -d -p 3000:3000 shayok
