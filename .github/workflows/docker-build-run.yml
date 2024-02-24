@@ -17,4 +17,5 @@ jobs:
       - name: Build Docker image
         run: |
          docker buildx shayok .
-         docker run -d -p 3000:3000 shayok
+         docker images
+   #      docker run -d -p 3000:3000 shayok
