@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker image
-        run: docker build shayok .
+        run: docker buildx shayok .
 
       - name: Run Docker container
         run: docker run -d -p 3000:3000 shayok
