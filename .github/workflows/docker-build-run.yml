@@ -18,4 +18,4 @@ jobs:
         run: |
          docker build -t  shayok .
          docker images
-   #      docker run -d -p 3000:3000 shayok
+         docker run -d -p 3000:3000 shayok
